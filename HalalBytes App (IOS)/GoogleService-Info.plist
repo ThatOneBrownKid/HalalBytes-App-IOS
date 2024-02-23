@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyDcCOKi1--4UxV-0wd6iW41Z8qdkDgN-uo</string>
+	<key>GCM_SENDER_ID</key>
+	<string>642701622141</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.HalalBytes-App--IOS-</string>
+	<key>PROJECT_ID</key>
+	<string>halalbytes-12651</string>
+	<key>STORAGE_BUCKET</key>
+	<string>halalbytes-12651.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:642701622141:ios:985eb9f6af722b702aea14</string>
+</dict>
+</plist>

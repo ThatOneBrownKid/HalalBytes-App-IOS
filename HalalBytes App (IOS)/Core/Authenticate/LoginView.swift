@@ -62,6 +62,7 @@ struct LoginView: View {
                 // sign up button
                 
                 NavigationLink{
+                    RegistrationView()
                     
                 } label: {
                     HStack{

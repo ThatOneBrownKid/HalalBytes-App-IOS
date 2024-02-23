@@ -12,6 +12,7 @@ struct RegistrationView: View {
     @State private var fullname = ""
     @State private var password = ""
     @State private var confirmPassword = ""
+    @Environment(\.dismiss) var dismiss
     var body: some View {
         VStack{
             Image("halalbytes-red")
@@ -65,11 +66,11 @@ struct RegistrationView: View {
             Spacer()
             
             Button {
-                
+                dismiss()
             } label: {
                 HStack{
-                    Text("Dont have an account?")
-                    Text("Sign Up")
+                    Text("Already have an account?")
+                    Text("Sign In")
                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                 }
                 .font(.system(size: 14))

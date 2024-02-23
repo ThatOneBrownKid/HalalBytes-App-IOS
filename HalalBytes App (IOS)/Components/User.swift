@@ -2,7 +2,7 @@
 //  User.swift
 //  HalalBytes App (IOS)
 //
-//  Created by Shafin Alam on 2/22/24.
+//  Created by Shafin Alam on 2/12/24.
 //
 
 import Foundation

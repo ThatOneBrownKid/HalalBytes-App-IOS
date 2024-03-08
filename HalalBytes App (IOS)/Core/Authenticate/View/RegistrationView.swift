@@ -27,7 +27,7 @@ struct RegistrationView: View {
                     text: $email,
                     title: "Email Address",
                     placeholder: "name@example.com")
-                    .autocapitalization(.none)
+                .autocapitalization(.none)
                 
                 InputView(
                     text: $fullname,
@@ -40,12 +40,30 @@ struct RegistrationView: View {
                     placeholder: "Enter Your Password",
                     isSecureField: true)
                 
-                InputView(
-                    text: $confirmPassword,
-                    title: "Confirm Password",
-                    placeholder: "Confirm Your Password",
-                    isSecureField: true)
+                ZStack(alignment: .trailing){
+                    InputView(
+                        text: $confirmPassword,
+                        title: "Confirm Password",
+                        placeholder: "Confirm Your Password",
+                        isSecureField: true)
+                    
+                    if !password.isEmpty && !confirmPassword.isEmpty {
+                        if password == confirmPassword{
+                            Image(systemName: "checkmark.circle.fill")
+                                .imageScale(.large)
+                                .fontWeight(.bold)
+                                .foregroundColor(Color(.systemGreen))
+                        } else {
+                            Image(systemName: "xmark.circle.fill")
+                                .imageScale(.large)
+                                .fontWeight(.bold)
+                                .foregroundColor(Color(.systemRed))
+                        }
+                        
+                    }
+                }
             }
+                
             .padding(.horizontal)
             .padding(.top, 12)
             
@@ -63,6 +81,8 @@ struct RegistrationView: View {
                 .frame(width: UIScreen.main.bounds.width - 32, height: 48)
             }
             .background(Color(.systemBlue))
+            .disabled(!formIsValid)
+            .opacity(formIsValid ? 1.0 : 0.5)
             .cornerRadius(10)
             .padding(.top, 24)
             
@@ -83,6 +103,22 @@ struct RegistrationView: View {
     }
 }
 
-#Preview {
-    RegistrationView()
+// MARK: - AuthenticationFormProtocol
+
+extension RegistrationView: AuthenticationFormProtocol{
+    var formIsValid: Bool{
+        return !email.isEmpty
+        && email.contains("@")
+        && !password.isEmpty
+        && password.count > 5
+        && confirmPassword == password
+        && !fullname.isEmpty
+        
+    }
+}
+
+struct RegistrationView_Preview: PreviewProvider {
+    static var previews: some View {
+        RegistrationView()
+    }
 }

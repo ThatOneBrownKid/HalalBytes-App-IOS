@@ -9,6 +9,9 @@ import Foundation
 import Firebase
 import FirebaseFirestoreSwift
 
+protocol AuthenticationFormProtocol {
+    var formIsValid: Bool {get}
+}
 
 @MainActor
 class AuthViewModel: ObservableObject {
@@ -25,8 +28,8 @@ class AuthViewModel: ObservableObject {
     
     func signIn(withEmail email: String, password: String) async throws {
         do {
-            let result = try? await Auth.auth().signIn(withEmail: email, password: password)
-            self.userSession = result?.user
+            let result = try await Auth.auth().signIn(withEmail: email, password: password)
+            self.userSession = result.user
             await fetchUser()
         } catch {
             print("DEBUG: Failed to log in with error \(error.localizedDescription)")
@@ -57,9 +60,26 @@ class AuthViewModel: ObservableObject {
         }
     }
     
-    //TODO
-    func deleteAccount() {
+    func deleteAccount() async throws {
+        guard let user = Auth.auth().currentUser else { return }
         
+        // First, delete the user data from Firestore
+        do {
+            try await Firestore.firestore().collection("users").document(user.uid).delete()
+        } catch {
+            print("DEBUG: Failed to delete user data from Firestore with error \(error.localizedDescription)")
+            throw error // rethrow to handle it outside if needed
+        }
+        
+        // Then, delete the user account from Firebase Authentication
+        do {
+            try await user.delete()
+            self.userSession = nil
+            self.currentUser = nil
+        } catch {
+            print("DEBUG: Failed to delete user account with error \(error.localizedDescription)")
+            throw error // rethrow to handle it outside if needed
+        }
     }
     
     func fetchUser() async {

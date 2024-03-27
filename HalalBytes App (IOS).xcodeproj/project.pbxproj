@@ -38,7 +38,7 @@
 		338889182B884DC0005F1A1E /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 338889172B884DC0005F1A1E /* FirebaseStorage */; };
 		3388891A2B884DC0005F1A1E /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 338889192B884DC0005F1A1E /* FirebaseStorageCombine-Community */; };
 		3388891E2B884E6C005F1A1E /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3388891D2B884E6C005F1A1E /* AuthViewModel.swift */; };
-		33C068392BB3C83500853107 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 33C068382BB3C83500853107 /* GoogleService-Info.plist */; };
+		33DE6CF72BB3D2A5004A8D15 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 33DE6CF62BB3D2A5004A8D15 /* GoogleService-Info.plist */; };
 		8500303F2B88198600790F64 /* HalalBytes_App__IOS_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8500303E2B88198600790F64 /* HalalBytes_App__IOS_App.swift */; };
 		850030412B88198600790F64 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850030402B88198600790F64 /* ContentView.swift */; };
 		850030432B88198C00790F64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 850030422B88198C00790F64 /* Assets.xcassets */; };
@@ -72,7 +72,7 @@
 		338888DC2B884168005F1A1E /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
 		338888DE2B88449E005F1A1E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = "HalalBytes App (IOS)/Components/User.swift"; sourceTree = SOURCE_ROOT; };
 		3388891D2B884E6C005F1A1E /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
-		33C068382BB3C83500853107 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		33DE6CF62BB3D2A5004A8D15 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8500303B2B88198600790F64 /* HalalBytes App (IOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HalalBytes App (IOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8500303E2B88198600790F64 /* HalalBytes_App__IOS_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalalBytes_App__IOS_App.swift; sourceTree = "<group>"; };
 		850030402B88198600790F64 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -181,7 +181,7 @@
 				8500304D2B88199800790F64 /* Core */,
 				8500304E2B88199A00790F64 /* Model */,
 				850030422B88198C00790F64 /* Assets.xcassets */,
-				33C068382BB3C83500853107 /* GoogleService-Info.plist */,
+				33DE6CF62BB3D2A5004A8D15 /* GoogleService-Info.plist */,
 				850030442B88198C00790F64 /* Preview Content */,
 			);
 			path = "HalalBytes App (IOS)";
@@ -366,7 +366,7 @@
 			files = (
 				850030462B88198C00790F64 /* Preview Assets.xcassets in Resources */,
 				850030432B88198C00790F64 /* Assets.xcassets in Resources */,
-				33C068392BB3C83500853107 /* GoogleService-Info.plist in Resources */,
+				33DE6CF72BB3D2A5004A8D15 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

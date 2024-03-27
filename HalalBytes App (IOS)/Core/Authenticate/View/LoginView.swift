@@ -79,6 +79,11 @@ struct LoginView: View {
                 }
                 
             }
+            .alert(isPresented: $viewModel.showErrorAlert) {
+                Alert(title: Text("Login Error"),
+                    message: Text("Invalid credentials"),
+                    dismissButton: .default(Text("OK")))
+            }
         }
     }
 }

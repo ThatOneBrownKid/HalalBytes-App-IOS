@@ -28,10 +28,16 @@ struct MainTabView: View {
                     Text("Home")
                 }
             
-            Text("Restaurants") // Assuming you have a HomeView
+            RestListView()
                 .tabItem {
                     Image(systemName: "storefront")
                     Text("Restaurants")
+                }
+            
+            RestCreateView()
+                .tabItem {
+                    Image(systemName: "plus")
+                    Text("Add Restaurants")
                 }
             
             ProfileView() // Assuming ProfileView is your intended profile view

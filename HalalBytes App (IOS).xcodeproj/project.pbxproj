@@ -66,6 +66,11 @@
 		850030B22B8857D100790F64 /* FirebaseInAppMessaging-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 850030B12B8857D100790F64 /* FirebaseInAppMessaging-Beta */; };
 		850030B42B8857D100790F64 /* FirebaseInAppMessagingSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 850030B32B8857D100790F64 /* FirebaseInAppMessagingSwift-Beta */; };
 		859095032BB3E6BD00ED7792 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859095022BB3E6BD00ED7792 /* HomeView.swift */; };
+		859095072BB4C43100ED7792 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859095062BB4C43100ED7792 /* Restaurant.swift */; };
+		8590950B2BB4C5C200ED7792 /* RestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8590950A2BB4C5C200ED7792 /* RestViewModel.swift */; };
+		8590950D2BB4C99300ED7792 /* RestCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8590950C2BB4C99300ED7792 /* RestCreateView.swift */; };
+		8590950F2BB4CDB300ED7792 /* RestRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8590950E2BB4CDB300ED7792 /* RestRowView.swift */; };
+		859095112BB4CDCB00ED7792 /* RestListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859095102BB4CDCB00ED7792 /* RestListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +88,11 @@
 		850030552B881B6200790F64 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		850030572B88207500790F64 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		859095022BB3E6BD00ED7792 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		859095062BB4C43100ED7792 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Restaurant.swift; path = "HalalBytes App (IOS)/Components/Restaurant.swift"; sourceTree = SOURCE_ROOT; };
+		8590950A2BB4C5C200ED7792 /* RestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestViewModel.swift; sourceTree = "<group>"; };
+		8590950C2BB4C99300ED7792 /* RestCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestCreateView.swift; sourceTree = "<group>"; };
+		8590950E2BB4CDB300ED7792 /* RestRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestRowView.swift; sourceTree = "<group>"; };
+		859095102BB4CDCB00ED7792 /* RestListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				338888DE2B88449E005F1A1E /* User.swift */,
+				859095062BB4C43100ED7792 /* Restaurant.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -262,6 +273,8 @@
 		859095002BB3E66A00ED7792 /* Restaurant */ = {
 			isa = PBXGroup;
 			children = (
+				859095082BB4C59200ED7792 /* View */,
+				859095092BB4C59900ED7792 /* ViewModel */,
 			);
 			path = Restaurant;
 			sourceTree = "<group>";
@@ -272,6 +285,24 @@
 				859095022BB3E6BD00ED7792 /* HomeView.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		859095082BB4C59200ED7792 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8590950C2BB4C99300ED7792 /* RestCreateView.swift */,
+				8590950E2BB4CDB300ED7792 /* RestRowView.swift */,
+				859095102BB4CDCB00ED7792 /* RestListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		859095092BB4C59900ED7792 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8590950A2BB4C5C200ED7792 /* RestViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -396,16 +427,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8590950B2BB4C5C200ED7792 /* RestViewModel.swift in Sources */,
+				859095072BB4C43100ED7792 /* Restaurant.swift in Sources */,
 				850030542B881B3300790F64 /* LoginView.swift in Sources */,
 				850030562B881B6200790F64 /* InputView.swift in Sources */,
 				850030412B88198600790F64 /* ContentView.swift in Sources */,
+				859095112BB4CDCB00ED7792 /* RestListView.swift in Sources */,
 				859095032BB3E6BD00ED7792 /* HomeView.swift in Sources */,
+				8590950D2BB4C99300ED7792 /* RestCreateView.swift in Sources */,
 				8500303F2B88198600790F64 /* HalalBytes_App__IOS_App.swift in Sources */,
 				338888DF2B88449E005F1A1E /* User.swift in Sources */,
 				338888DB2B883F94005F1A1E /* ProfileView.swift in Sources */,
 				850030582B88207500790F64 /* RegistrationView.swift in Sources */,
 				338888DD2B884168005F1A1E /* SettingsRowView.swift in Sources */,
 				3388891E2B884E6C005F1A1E /* AuthViewModel.swift in Sources */,
+				8590950F2BB4CDB300ED7792 /* RestRowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,6 +11,7 @@ import Firebase
 @main
 struct HalalBytes_App__IOS_App: App {
     @StateObject var viewModel = AuthViewModel()
+    @StateObject var restViewModel = RestViewModel()
     
     init(){
         FirebaseApp.configure()
@@ -20,6 +21,7 @@ struct HalalBytes_App__IOS_App: App {
         WindowGroup {
             ContentView()
                 .environmentObject(viewModel)
+                .environmentObject(restViewModel)
         }
     }
 }

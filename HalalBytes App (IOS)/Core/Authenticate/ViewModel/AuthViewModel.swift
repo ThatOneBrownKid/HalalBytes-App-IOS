@@ -17,12 +17,19 @@ protocol AuthenticationFormProtocol {
 class AuthViewModel: ObservableObject {
     @Published var userSession: FirebaseAuth.User?
     @Published var currentUser: User?
+    @Published var showErrorAlert: Bool = false
+    @Published var errorMessage: String? = nil
     
     init() {
-        self.userSession = Auth.auth().currentUser
-        
-        Task {
-            await fetchUser()
+        Auth.auth().addStateDidChangeListener { [weak self] auth, user in
+            self?.userSession = user
+            if let _ = user {
+                Task {
+                    await self?.fetchUser()
+                }
+            } else {
+                self?.currentUser = nil
+            }
         }
     }
     
@@ -33,7 +40,10 @@ class AuthViewModel: ObservableObject {
             await fetchUser()
         } catch {
             print("DEBUG: Failed to log in with error \(error.localizedDescription)")
-            
+            DispatchQueue.main.async {
+                self.errorMessage = "Failed to login: \(error.localizedDescription)"
+                self.showErrorAlert = true
+            }
         }
     }
     
@@ -41,12 +51,16 @@ class AuthViewModel: ObservableObject {
         do {
             let result = try await Auth.auth().createUser(withEmail: email, password: password)
             self.userSession = result.user
-            let user = User(id: result.user.uid, fullname: fullname, email: email)
+            let user = User(id: result.user.uid, fullname: fullname, email: email, admin: false)
             let encodedUser = try Firestore.Encoder().encode(user)
             try await Firestore.firestore().collection("users").document(user.id).setData(encodedUser)
             await fetchUser()
         } catch {
             print("DEBUG: Failed to create user with error \(error.localizedDescription)")
+            DispatchQueue.main.async {
+                self.errorMessage = "Failed to create user: \(error.localizedDescription)"
+                self.showErrorAlert = true
+            }
         }
     }
     
@@ -105,8 +119,18 @@ class AuthViewModel: ObservableObject {
     }
     
     func fetchUser() async {
-        guard let uid = Auth.auth().currentUser?.uid else {return}
-        guard let snapshot = try? await Firestore.firestore().collection("users").document(uid).getDocument() else {return}
-        self.currentUser = try? snapshot.data(as: User.self)
+        guard let uid = Auth.auth().currentUser?.uid else {
+            self.userSession = nil
+            self.currentUser = nil
+            return
+        }
+        do {
+            let snapshot = try await Firestore.firestore().collection("users").document(uid).getDocument()
+            self.currentUser = try snapshot.data(as: User.self)
+        } catch {
+            print("Failed to fetch user: \(error)")
+            self.userSession = nil
+            self.currentUser = nil
+        }
     }
 }

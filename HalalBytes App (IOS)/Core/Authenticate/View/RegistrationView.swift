@@ -100,6 +100,11 @@ struct RegistrationView: View {
             }
 
         }
+        .alert(isPresented: $viewModel.showErrorAlert) {
+            Alert(title: Text("Sign Up Error"),
+                message: Text(viewModel.errorMessage ?? "An unknown error occurred."),
+                dismissButton: .default(Text("OK")))
+        }
     }
 }
 

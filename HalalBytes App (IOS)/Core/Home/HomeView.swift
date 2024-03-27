@@ -9,7 +9,15 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            Image("halalbytes-red")
+                .resizable()
+                .scaledToFill()
+                .frame(width: 100,height: 120)
+                .padding(.vertical,32)
+            
+            Text("Ramadan Mubarak")
+        }
     }
 }
 

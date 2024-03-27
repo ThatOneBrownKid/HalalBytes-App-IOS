@@ -65,6 +65,7 @@
 		850030B02B8857D100790F64 /* FirebaseFunctionsCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 850030AF2B8857D100790F64 /* FirebaseFunctionsCombine-Community */; };
 		850030B22B8857D100790F64 /* FirebaseInAppMessaging-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 850030B12B8857D100790F64 /* FirebaseInAppMessaging-Beta */; };
 		850030B42B8857D100790F64 /* FirebaseInAppMessagingSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 850030B32B8857D100790F64 /* FirebaseInAppMessagingSwift-Beta */; };
+		859095032BB3E6BD00ED7792 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859095022BB3E6BD00ED7792 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,7 @@
 		850030532B881B3300790F64 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		850030552B881B6200790F64 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		850030572B88207500790F64 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		859095022BB3E6BD00ED7792 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +208,8 @@
 		8500304D2B88199800790F64 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				859095012BB3E67B00ED7792 /* Home */,
+				859095002BB3E66A00ED7792 /* Restaurant */,
 				850030502B881A9200790F64 /* Authenticate */,
 				850030512B881AA000790F64 /* Profile */,
 				850030522B881AB500790F64 /* Root */,
@@ -253,6 +257,21 @@
 				850030402B88198600790F64 /* ContentView.swift */,
 			);
 			path = Root;
+			sourceTree = "<group>";
+		};
+		859095002BB3E66A00ED7792 /* Restaurant */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Restaurant;
+			sourceTree = "<group>";
+		};
+		859095012BB3E67B00ED7792 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				859095022BB3E6BD00ED7792 /* HomeView.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -380,6 +399,7 @@
 				850030542B881B3300790F64 /* LoginView.swift in Sources */,
 				850030562B881B6200790F64 /* InputView.swift in Sources */,
 				850030412B88198600790F64 /* ContentView.swift in Sources */,
+				859095032BB3E6BD00ED7792 /* HomeView.swift in Sources */,
 				8500303F2B88198600790F64 /* HalalBytes_App__IOS_App.swift in Sources */,
 				338888DF2B88449E005F1A1E /* User.swift in Sources */,
 				338888DB2B883F94005F1A1E /* ProfileView.swift in Sources */,

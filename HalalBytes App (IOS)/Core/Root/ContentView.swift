@@ -11,13 +11,34 @@ struct ContentView: View {
     @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {
-        Group{
-            if viewModel.userSession != nil {
-                ProfileView()
-            } else{
-                LoginView()
-            }
+        if viewModel.userSession != nil {
+            MainTabView()
+        } else {
+            LoginView()
+        }
+    }
+}
+
+struct MainTabView: View {
+    var body: some View {
+        TabView {
+            HomeView()// Assuming you have a HomeView
+                .tabItem {
+                    Image(systemName: "house")
+                    Text("Home")
+                }
             
+            Text("Restaurants") // Assuming you have a HomeView
+                .tabItem {
+                    Image(systemName: "storefront")
+                    Text("Restaurants")
+                }
+            
+            ProfileView() // Assuming ProfileView is your intended profile view
+                .tabItem {
+                    Image(systemName: "person")
+                    Text("Profile")
+                }
         }
     }
 }

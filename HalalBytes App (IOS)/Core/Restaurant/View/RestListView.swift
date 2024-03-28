@@ -13,7 +13,9 @@ struct RestListView: View {
     var body: some View {
         NavigationView {
             List(viewModel.restaurants, id: \.id) { restaurant in
-                RestRowView(restaurant: restaurant)
+                NavigationLink(destination: RestDetailView(restaurant: restaurant)) {
+                    RestRowView(restaurant: restaurant)
+                }
             }
             .navigationTitle("Restaurants")
             .onAppear {
@@ -22,5 +24,6 @@ struct RestListView: View {
         }
     }
 }
+
 
 

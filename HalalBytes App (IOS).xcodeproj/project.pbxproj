@@ -71,6 +71,7 @@
 		8590950D2BB4C99300ED7792 /* RestCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8590950C2BB4C99300ED7792 /* RestCreateView.swift */; };
 		8590950F2BB4CDB300ED7792 /* RestRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8590950E2BB4CDB300ED7792 /* RestRowView.swift */; };
 		859095112BB4CDCB00ED7792 /* RestListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859095102BB4CDCB00ED7792 /* RestListView.swift */; };
+		859095152BB6271600ED7792 /* RestDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859095142BB6271600ED7792 /* RestDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +94,7 @@
 		8590950C2BB4C99300ED7792 /* RestCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestCreateView.swift; sourceTree = "<group>"; };
 		8590950E2BB4CDB300ED7792 /* RestRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestRowView.swift; sourceTree = "<group>"; };
 		859095102BB4CDCB00ED7792 /* RestListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestListView.swift; sourceTree = "<group>"; };
+		859095142BB6271600ED7792 /* RestDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -293,6 +295,7 @@
 				8590950C2BB4C99300ED7792 /* RestCreateView.swift */,
 				8590950E2BB4CDB300ED7792 /* RestRowView.swift */,
 				859095102BB4CDCB00ED7792 /* RestListView.swift */,
+				859095142BB6271600ED7792 /* RestDetailsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -442,6 +445,7 @@
 				338888DD2B884168005F1A1E /* SettingsRowView.swift in Sources */,
 				3388891E2B884E6C005F1A1E /* AuthViewModel.swift in Sources */,
 				8590950F2BB4CDB300ED7792 /* RestRowView.swift in Sources */,
+				859095152BB6271600ED7792 /* RestDetailsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

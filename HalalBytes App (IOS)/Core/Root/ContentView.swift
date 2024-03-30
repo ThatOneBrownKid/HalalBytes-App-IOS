@@ -25,25 +25,25 @@ struct MainTabView: View {
             HomeView()// Assuming you have a HomeView
                 .tabItem {
                     Image(systemName: "house")
-                    Text("Home")
+//                    Text("Home")
                 }
             
             RestListView()
                 .tabItem {
                     Image(systemName: "storefront")
-                    Text("Restaurants")
+//                    Text("Restaurants")
                 }
             
             RestCreateView()
                 .tabItem {
                     Image(systemName: "plus")
-                    Text("Add Restaurants")
+//                    Text("Add Restaurants")
                 }
             
             ProfileView() // Assuming ProfileView is your intended profile view
                 .tabItem {
                     Image(systemName: "person")
-                    Text("Profile")
+//                    Text("Profile")
                 }
         }
     }

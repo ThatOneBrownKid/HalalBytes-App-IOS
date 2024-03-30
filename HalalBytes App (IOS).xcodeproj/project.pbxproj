@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		337A88F92BB677F300563587 /* URLImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337A88F82BB677F300563587 /* URLImageView.swift */; };
 		338888DB2B883F94005F1A1E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338888DA2B883F93005F1A1E /* ProfileView.swift */; };
 		338888DD2B884168005F1A1E /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338888DC2B884168005F1A1E /* SettingsRowView.swift */; };
 		338888DF2B88449E005F1A1E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338888DE2B88449E005F1A1E /* User.swift */; };
@@ -75,6 +76,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		337A88F82BB677F300563587 /* URLImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImageView.swift; sourceTree = "<group>"; };
 		338888DA2B883F93005F1A1E /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		338888DC2B884168005F1A1E /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
 		338888DE2B88449E005F1A1E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = "HalalBytes App (IOS)/Components/User.swift"; sourceTree = SOURCE_ROOT; };
@@ -296,6 +298,7 @@
 				8590950E2BB4CDB300ED7792 /* RestRowView.swift */,
 				859095102BB4CDCB00ED7792 /* RestListView.swift */,
 				859095142BB6271600ED7792 /* RestDetailsView.swift */,
+				337A88F82BB677F300563587 /* URLImageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -438,6 +441,7 @@
 				859095112BB4CDCB00ED7792 /* RestListView.swift in Sources */,
 				859095032BB3E6BD00ED7792 /* HomeView.swift in Sources */,
 				8590950D2BB4C99300ED7792 /* RestCreateView.swift in Sources */,
+				337A88F92BB677F300563587 /* URLImageView.swift in Sources */,
 				8500303F2B88198600790F64 /* HalalBytes_App__IOS_App.swift in Sources */,
 				338888DF2B88449E005F1A1E /* User.swift in Sources */,
 				338888DB2B883F94005F1A1E /* ProfileView.swift in Sources */,
@@ -579,7 +583,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HalalBytes App (IOS)/Preview Content\"";
-				DEVELOPMENT_TEAM = LXC375T8T5;
+				DEVELOPMENT_TEAM = XU45A9DZ26;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -608,7 +612,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HalalBytes App (IOS)/Preview Content\"";
-				DEVELOPMENT_TEAM = LXC375T8T5;
+				DEVELOPMENT_TEAM = XU45A9DZ26;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

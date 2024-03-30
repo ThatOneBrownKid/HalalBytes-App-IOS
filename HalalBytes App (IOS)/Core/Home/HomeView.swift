@@ -16,7 +16,8 @@ struct HomeView: View {
                 .frame(width: 100,height: 120)
                 .padding(.vertical,32)
             
-            Text("Ramadan Mubarak")
+            Text("Ramadan Mubarak!")
+            Text("Explore the best halal food in Columbus")
         }
     }
 }

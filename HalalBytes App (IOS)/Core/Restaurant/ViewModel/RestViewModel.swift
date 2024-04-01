@@ -9,6 +9,7 @@ import Foundation
 import Firebase
 import FirebaseFirestoreSwift
 import FirebaseStorage
+import CoreLocation
 
 class RestViewModel: ObservableObject {
     @Published var restaurants: [Restaurant] = []
@@ -39,43 +40,65 @@ class RestViewModel: ObservableObject {
             }
         }
     }
+    
+    
     // Modify createRestaurant to handle image uploads
     func createRestaurant(restaurant: Restaurant, images: [UIImage]) {
-        let group = DispatchGroup()
-        var uploadedImageUrls = [String]()
-
-        // Upload each image and collect their URLs
-        for image in images {
-            group.enter()
-            uploadImage(image: image) { url in
-                if let url = url {
-                    uploadedImageUrls.append(url)
-                }
-                group.leave()
+        // Concatenate the address components to form a full address
+        let fullAddress = "\(restaurant.street_address), \(restaurant.city), \(restaurant.state) \(restaurant.zip_code)"
+        
+        // Geocode the full address to get coordinates
+        geocodeAddress(fullAddress) { [weak self] coordinate in
+            guard let self = self, let coordinate = coordinate else {
+                print("Could not geocode address")
+                return
             }
-        }
-
-        // Once all images are uploaded, save the restaurant document with image URLs
-        group.notify(queue: .main) {
-            self.db.collection("restaurants").document(restaurant.id).setData([
-                "id": restaurant.id,
-                "name": restaurant.name,
-                "cuisine": restaurant.cuisine,
-                "phone": restaurant.phone,
-                "street_address": restaurant.street_address,
-                "city": restaurant.city,
-                "state": restaurant.state,
-                "zip_code": restaurant.zip_code,
-                "imageUrls": uploadedImageUrls  // Save image URLs here
-            ]) { error in
-                if let error = error {
-                    print("Error adding document: \(error)")
-                } else {
-                    print("Document added with ID: \(restaurant.id), with images: \(uploadedImageUrls)")
+            
+            // Set the latitude and longitude of the restaurant
+            var updatedRestaurant = restaurant
+            updatedRestaurant.latitude = coordinate.latitude
+            updatedRestaurant.longitude = coordinate.longitude
+            
+            // Initialize the dispatch group for image uploads
+            let group = DispatchGroup()
+            var uploadedImageUrls = [String]()
+            
+            // Upload each image and collect their URLs
+            for image in images {
+                group.enter()
+                self.uploadImage(image: image) { url in
+                    if let url = url {
+                        uploadedImageUrls.append(url)
+                    }
+                    group.leave()
+                }
+            }
+            
+            // Once all images are uploaded and the address is geocoded, save the restaurant document
+            group.notify(queue: .main) {
+                self.db.collection("restaurants").document(updatedRestaurant.id).setData([
+                    "id": updatedRestaurant.id,
+                    "name": updatedRestaurant.name,
+                    "cuisine": updatedRestaurant.cuisine,
+                    "phone": updatedRestaurant.phone,
+                    "street_address": updatedRestaurant.street_address,
+                    "city": updatedRestaurant.city,
+                    "state": updatedRestaurant.state,
+                    "zip_code": updatedRestaurant.zip_code,
+                    "latitude": updatedRestaurant.latitude, // Include latitude
+                    "longitude": updatedRestaurant.longitude, // Include longitude
+                    "imageUrls": uploadedImageUrls  // Save image URLs here
+                ]) { error in
+                    if let error = error {
+                        print("Error adding document: \(error)")
+                    } else {
+                        print("Document added with ID: \(updatedRestaurant.id), Name: \(updatedRestaurant.name), Coordinates: \(updatedRestaurant.latitude), \(updatedRestaurant.longitude), with images: \(uploadedImageUrls)")
+                    }
                 }
             }
         }
     }
+
     
     func updateRestaurant(restaurant: Restaurant) {
         db.collection("restaurants").document(restaurant.id).updateData([
@@ -121,6 +144,23 @@ class RestViewModel: ObservableObject {
                 self.restaurants = querySnapshot!.documents.compactMap { document in
                     try? document.data(as: Restaurant.self)
                 }
+            }
+        }
+    }
+    
+    func geocodeAddress(_ address: String, completion: @escaping (CLLocationCoordinate2D?) -> Void) {
+        let geocoder = CLGeocoder()
+        geocoder.geocodeAddressString(address) { placemarks, error in
+            guard error == nil else {
+                print("Geocoding error: \(error!.localizedDescription)")
+                completion(nil)
+                return
+            }
+            
+            if let placemark = placemarks?.first, let location = placemark.location {
+                completion(location.coordinate)
+            } else {
+                completion(nil)
             }
         }
     }

@@ -105,7 +105,7 @@ struct RestCreateView: View {
                             
                             if uiImages.count == selectedItems.count {
                                 // All images have been converted to UIImages, proceed to upload and create the restaurant
-                                let newRestaurant = Restaurant(id: UUID().uuidString, name: name, cuisine: cuisine, phone: phone, street_address: streetAddress, city: city, state: state, zip_code: zipCode, imageUrls: [])
+                                let newRestaurant = Restaurant(id: UUID().uuidString, name: name, cuisine: cuisine, phone: phone, street_address: streetAddress, city: city, state: state, zip_code: zipCode, latitude: 0, longitude: 0, imageUrls: [])
                                 restViewModel.createRestaurant(restaurant: newRestaurant, images: uiImages)
                                 dismiss()
                             }

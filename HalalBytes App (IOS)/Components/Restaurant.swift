@@ -16,6 +16,8 @@ struct Restaurant: Identifiable, Codable {
     let city: String
     let state: String
     let zip_code: String
+    var latitude: Double
+    var longitude: Double
     var imageUrls: [String]
     
     

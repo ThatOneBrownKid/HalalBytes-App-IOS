@@ -14,6 +14,9 @@ import CoreLocation
 class RestViewModel: ObservableObject {
     @Published var restaurants: [Restaurant] = []
     private var db = Firestore.firestore()
+    private var lastDocumentSnapshot: DocumentSnapshot?
+    private var isFetching = false
+    private let itemsPerPage = 10
     
     
     // Helper function to upload an image to Firebase Storage
@@ -96,7 +99,6 @@ class RestViewModel: ObservableObject {
         }
     }
 
-
     
     func updateRestaurant(restaurant: Restaurant) {
         db.collection("restaurants").document(restaurant.id).updateData([
@@ -116,6 +118,7 @@ class RestViewModel: ObservableObject {
         }
     }
     
+    
     func deleteRestaurant(restaurantId: String) {
         db.collection("restaurants").document(restaurantId).delete() { err in
             if let err = err {
@@ -129,22 +132,38 @@ class RestViewModel: ObservableObject {
             }
         }
     }
-
-
-        
         
     
     func fetchRestaurants() {
-        db.collection("restaurants").getDocuments { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                self.restaurants = querySnapshot!.documents.compactMap { document in
-                    try? document.data(as: Restaurant.self)
+            guard !isFetching else { return }
+            isFetching = true
+            
+            var query: Query = db.collection("restaurants").limit(to: itemsPerPage)
+            
+            // If we have a last document, start after it
+            if let lastSnapshot = lastDocumentSnapshot {
+                query = query.start(afterDocument: lastSnapshot)
+            }
+            
+            query.getDocuments { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                    self.isFetching = false
+                } else {
+                    let newRestaurants = querySnapshot!.documents.compactMap { document in
+                        try? document.data(as: Restaurant.self)
+                    }
+                    
+                    if newRestaurants.count > 0 {
+                        self.lastDocumentSnapshot = querySnapshot!.documents.last
+                        self.restaurants.append(contentsOf: newRestaurants)
+                    }
+                    
+                    self.isFetching = false
                 }
             }
         }
-    }
+    
     
     func geocodeAddress(_ address: String, completion: @escaping (CLLocationCoordinate2D?) -> Void) {
         let geocoder = CLGeocoder()
@@ -162,6 +181,7 @@ class RestViewModel: ObservableObject {
             }
         }
     }
+    
     
 }
 

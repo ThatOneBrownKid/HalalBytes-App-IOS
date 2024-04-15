@@ -12,14 +12,21 @@ struct RestListView: View {
 
     var body: some View {
         NavigationView {
-            List(viewModel.restaurants, id: \.id) { restaurant in
-                NavigationLink(destination: RestDetailView(restaurant: restaurant)) {
-                    RestRowView(restaurant: restaurant)
+            List(viewModel.restaurants.indices, id: \.self) { index in
+                NavigationLink(destination: RestDetailView(restaurant: viewModel.restaurants[index])) {
+                    RestRowView(restaurant: viewModel.restaurants[index])
+                        .onAppear {
+                            if index == viewModel.restaurants.count - 1 { // Last cell
+                                viewModel.fetchRestaurants()
+                            }
+                        }
                 }
             }
             .navigationTitle("Restaurants")
             .onAppear {
-                viewModel.fetchRestaurants()
+                if viewModel.restaurants.isEmpty {
+                    viewModel.fetchRestaurants()
+                }
             }
         }
     }

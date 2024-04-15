@@ -16,6 +16,7 @@ struct RestCreateView: View {
     @State private var selectedImages = [Image]()
     @State private var showAlert = false
     @State private var imageIndexToRemove: Int?
+    @State private var alertMessage = ""
 
     // Grid layout configuration
     private let columns = [GridItem(.flexible()), GridItem(.flexible())]  // Adjust the number of columns as needed
@@ -104,10 +105,18 @@ struct RestCreateView: View {
                             }
                             
                             if uiImages.count == selectedItems.count {
-                                // All images have been converted to UIImages, proceed to upload and create the restaurant
                                 let newRestaurant = Restaurant(id: UUID().uuidString, name: name, cuisine: cuisine, phone: phone, street_address: streetAddress, city: city, state: state, zip_code: zipCode, latitude: 0, longitude: 0, imageUrls: [])
-                                restViewModel.createRestaurant(restaurant: newRestaurant, images: uiImages)
-                                dismiss()
+                                restViewModel.createRestaurant(restaurant: newRestaurant, images: uiImages) { success,errorMessage  in
+                                    DispatchQueue.main.async {  // Ensure UI updates are on the main thread
+                                        if success {
+                                            clearForm()
+                                            alertMessage = "Restaurant added successfully!"
+                                        } else {
+                                            alertMessage = errorMessage ?? "Failed to add restaurant."
+                                        }
+                                        showAlert = true
+                                    }
+                                }
                             }
                         }
                     }
@@ -121,6 +130,9 @@ struct RestCreateView: View {
                 .disabled(!formIsValid || selectedItems.isEmpty) // Ensure there's at least one image selected along with valid form details
                 .opacity(formIsValid && !selectedItems.isEmpty ? 1 : 0.5)
                 .padding()
+                .alert(isPresented: $showAlert) {
+                    Alert(title: Text("Notification"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+                }
 
 
                 Spacer()
@@ -133,6 +145,20 @@ struct RestCreateView: View {
     var formIsValid: Bool {
         !name.isEmpty && !cuisine.isEmpty && !phone.isEmpty && !streetAddress.isEmpty && !city.isEmpty && !state.isEmpty && !zipCode.isEmpty
     }
+    
+    func clearForm() {
+            name = ""
+            cuisine = ""
+            phone = ""
+            streetAddress = ""
+            city = ""
+            state = ""
+            zipCode = ""
+            selectedItems.removeAll()
+            selectedImages.removeAll()
+    }
+    
+    
 }
 
 struct CreateRestaurantView_Previews: PreviewProvider {

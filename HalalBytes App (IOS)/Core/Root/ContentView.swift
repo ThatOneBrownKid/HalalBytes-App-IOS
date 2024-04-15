@@ -26,11 +26,11 @@ struct MainTabView: View {
     
     var body: some View {
         TabView {
-            HomeView()
-                .tabItem {
-                    Image(systemName: "house")
-//                    Text("Home")
-                }
+//            HomeView()
+//                .tabItem {
+//                    Image(systemName: "house")
+////                    Text("Home")
+//                }
             
             RestListView()
                 .tabItem {

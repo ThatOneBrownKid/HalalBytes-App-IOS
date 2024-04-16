@@ -40,6 +40,9 @@
 		3388891A2B884DC0005F1A1E /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 338889192B884DC0005F1A1E /* FirebaseStorageCombine-Community */; };
 		3388891E2B884E6C005F1A1E /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3388891D2B884E6C005F1A1E /* AuthViewModel.swift */; };
 		33DE6CF72BB3D2A5004A8D15 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 33DE6CF62BB3D2A5004A8D15 /* GoogleService-Info.plist */; };
+		33E4C5212BCE098700B4F656 /* HalalBytes_App__IOS_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E4C5202BCE098700B4F656 /* HalalBytes_App__IOS_Tests.swift */; };
+		33E4C53F2BCE168800B4F656 /* HalalBytes_App__IOS_UITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E4C53E2BCE168800B4F656 /* HalalBytes_App__IOS_UITest.swift */; };
+		33E4C5412BCE168800B4F656 /* HalalBytes_App__IOS_UITestLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E4C5402BCE168800B4F656 /* HalalBytes_App__IOS_UITestLaunchTests.swift */; };
 		8500303F2B88198600790F64 /* HalalBytes_App__IOS_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8500303E2B88198600790F64 /* HalalBytes_App__IOS_App.swift */; };
 		850030412B88198600790F64 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850030402B88198600790F64 /* ContentView.swift */; };
 		850030432B88198C00790F64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 850030422B88198C00790F64 /* Assets.xcassets */; };
@@ -77,6 +80,23 @@
 		859095152BB6271600ED7792 /* RestDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859095142BB6271600ED7792 /* RestDetailsView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		33E4C5222BCE098700B4F656 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 850030332B88198600790F64 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8500303A2B88198600790F64;
+			remoteInfo = "HalalBytes App (IOS)";
+		};
+		33E4C5422BCE168800B4F656 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 850030332B88198600790F64 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8500303A2B88198600790F64;
+			remoteInfo = "HalalBytes App (IOS)";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		337A88F82BB677F300563587 /* URLImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImageView.swift; sourceTree = "<group>"; };
 		338888DA2B883F93005F1A1E /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -84,6 +104,11 @@
 		338888DE2B88449E005F1A1E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = "HalalBytes App (IOS)/Components/User.swift"; sourceTree = SOURCE_ROOT; };
 		3388891D2B884E6C005F1A1E /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		33DE6CF62BB3D2A5004A8D15 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		33E4C51E2BCE098700B4F656 /* HalalBytes App (IOS)Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HalalBytes App (IOS)Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		33E4C5202BCE098700B4F656 /* HalalBytes_App__IOS_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalalBytes_App__IOS_Tests.swift; sourceTree = "<group>"; };
+		33E4C53C2BCE168800B4F656 /* HalalBytes App (IOS)UITest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HalalBytes App (IOS)UITest.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		33E4C53E2BCE168800B4F656 /* HalalBytes_App__IOS_UITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalalBytes_App__IOS_UITest.swift; sourceTree = "<group>"; };
+		33E4C5402BCE168800B4F656 /* HalalBytes_App__IOS_UITestLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalalBytes_App__IOS_UITestLaunchTests.swift; sourceTree = "<group>"; };
 		8500303B2B88198600790F64 /* HalalBytes App (IOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HalalBytes App (IOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8500303E2B88198600790F64 /* HalalBytes_App__IOS_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalalBytes_App__IOS_App.swift; sourceTree = "<group>"; };
 		850030402B88198600790F64 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -104,6 +129,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		33E4C51B2BCE098700B4F656 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		33E4C5392BCE168800B4F656 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		850030382B88198600790F64 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -177,10 +216,29 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		33E4C51F2BCE098700B4F656 /* HalalBytes App (IOS)Tests */ = {
+			isa = PBXGroup;
+			children = (
+				33E4C5202BCE098700B4F656 /* HalalBytes_App__IOS_Tests.swift */,
+			);
+			path = "HalalBytes App (IOS)Tests";
+			sourceTree = "<group>";
+		};
+		33E4C53D2BCE168800B4F656 /* HalalBytes App (IOS)UITest */ = {
+			isa = PBXGroup;
+			children = (
+				33E4C53E2BCE168800B4F656 /* HalalBytes_App__IOS_UITest.swift */,
+				33E4C5402BCE168800B4F656 /* HalalBytes_App__IOS_UITestLaunchTests.swift */,
+			);
+			path = "HalalBytes App (IOS)UITest";
+			sourceTree = "<group>";
+		};
 		850030322B88198600790F64 = {
 			isa = PBXGroup;
 			children = (
 				8500303D2B88198600790F64 /* HalalBytes App (IOS) */,
+				33E4C51F2BCE098700B4F656 /* HalalBytes App (IOS)Tests */,
+				33E4C53D2BCE168800B4F656 /* HalalBytes App (IOS)UITest */,
 				8500303C2B88198600790F64 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -189,6 +247,8 @@
 			isa = PBXGroup;
 			children = (
 				8500303B2B88198600790F64 /* HalalBytes App (IOS).app */,
+				33E4C51E2BCE098700B4F656 /* HalalBytes App (IOS)Tests.xctest */,
+				33E4C53C2BCE168800B4F656 /* HalalBytes App (IOS)UITest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -328,6 +388,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		33E4C51D2BCE098700B4F656 /* HalalBytes App (IOS)Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 33E4C5262BCE098700B4F656 /* Build configuration list for PBXNativeTarget "HalalBytes App (IOS)Tests" */;
+			buildPhases = (
+				33E4C51A2BCE098700B4F656 /* Sources */,
+				33E4C51B2BCE098700B4F656 /* Frameworks */,
+				33E4C51C2BCE098700B4F656 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				33E4C5232BCE098700B4F656 /* PBXTargetDependency */,
+			);
+			name = "HalalBytes App (IOS)Tests";
+			productName = "HalalBytes App (IOS)Tests";
+			productReference = 33E4C51E2BCE098700B4F656 /* HalalBytes App (IOS)Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		33E4C53B2BCE168800B4F656 /* HalalBytes App (IOS)UITest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 33E4C5442BCE168800B4F656 /* Build configuration list for PBXNativeTarget "HalalBytes App (IOS)UITest" */;
+			buildPhases = (
+				33E4C5382BCE168800B4F656 /* Sources */,
+				33E4C5392BCE168800B4F656 /* Frameworks */,
+				33E4C53A2BCE168800B4F656 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				33E4C5432BCE168800B4F656 /* PBXTargetDependency */,
+			);
+			name = "HalalBytes App (IOS)UITest";
+			productName = "HalalBytes App (IOS)UITest";
+			productReference = 33E4C53C2BCE168800B4F656 /* HalalBytes App (IOS)UITest.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		8500303A2B88198600790F64 /* HalalBytes App (IOS) */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 850030492B88198C00790F64 /* Build configuration list for PBXNativeTarget "HalalBytes App (IOS)" */;
@@ -400,9 +496,17 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1520;
+				LastSwiftUpdateCheck = 1530;
 				LastUpgradeCheck = 1520;
 				TargetAttributes = {
+					33E4C51D2BCE098700B4F656 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 8500303A2B88198600790F64;
+					};
+					33E4C53B2BCE168800B4F656 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 8500303A2B88198600790F64;
+					};
 					8500303A2B88198600790F64 = {
 						CreatedOnToolsVersion = 15.2;
 					};
@@ -425,11 +529,27 @@
 			projectRoot = "";
 			targets = (
 				8500303A2B88198600790F64 /* HalalBytes App (IOS) */,
+				33E4C51D2BCE098700B4F656 /* HalalBytes App (IOS)Tests */,
+				33E4C53B2BCE168800B4F656 /* HalalBytes App (IOS)UITest */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		33E4C51C2BCE098700B4F656 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		33E4C53A2BCE168800B4F656 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		850030392B88198600790F64 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -443,6 +563,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		33E4C51A2BCE098700B4F656 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33E4C5212BCE098700B4F656 /* HalalBytes_App__IOS_Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		33E4C5382BCE168800B4F656 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33E4C53F2BCE168800B4F656 /* HalalBytes_App__IOS_UITest.swift in Sources */,
+				33E4C5412BCE168800B4F656 /* HalalBytes_App__IOS_UITestLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		850030372B88198600790F64 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -471,7 +608,93 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		33E4C5232BCE098700B4F656 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8500303A2B88198600790F64 /* HalalBytes App (IOS) */;
+			targetProxy = 33E4C5222BCE098700B4F656 /* PBXContainerItemProxy */;
+		};
+		33E4C5432BCE168800B4F656 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8500303A2B88198600790F64 /* HalalBytes App (IOS) */;
+			targetProxy = 33E4C5422BCE168800B4F656 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		33E4C5242BCE098700B4F656 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "HalalBytes.HalalBytes-App--IOS-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HalalBytes App (IOS).app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HalalBytes App (IOS)";
+			};
+			name = Debug;
+		};
+		33E4C5252BCE098700B4F656 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XU45A9DZ26;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "HalalBytes.HalalBytes-App--IOS-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HalalBytes App (IOS).app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HalalBytes App (IOS)";
+			};
+			name = Release;
+		};
+		33E4C5452BCE168800B4F656 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XU45A9DZ26;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "HalalBytes.HalalBytes-App--IOS-UITest";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "HalalBytes App (IOS)";
+			};
+			name = Debug;
+		};
+		33E4C5462BCE168800B4F656 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XU45A9DZ26;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "HalalBytes.HalalBytes-App--IOS-UITest";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "HalalBytes App (IOS)";
+			};
+			name = Release;
+		};
 		850030472B88198C00790F64 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -654,6 +877,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		33E4C5262BCE098700B4F656 /* Build configuration list for PBXNativeTarget "HalalBytes App (IOS)Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33E4C5242BCE098700B4F656 /* Debug */,
+				33E4C5252BCE098700B4F656 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		33E4C5442BCE168800B4F656 /* Build configuration list for PBXNativeTarget "HalalBytes App (IOS)UITest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33E4C5452BCE168800B4F656 /* Debug */,
+				33E4C5462BCE168800B4F656 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		850030362B88198600790F64 /* Build configuration list for PBXProject "HalalBytes App (IOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

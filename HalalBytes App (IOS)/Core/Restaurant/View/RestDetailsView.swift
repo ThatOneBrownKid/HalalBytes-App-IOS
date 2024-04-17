@@ -56,6 +56,7 @@ struct RestDetailView: View {
             
             Spacer()
         }
+        .accessibilityIdentifier("RestDetailView")
         .padding()
         .navigationTitle("Details")
         .navigationBarTitleDisplayMode(.inline)

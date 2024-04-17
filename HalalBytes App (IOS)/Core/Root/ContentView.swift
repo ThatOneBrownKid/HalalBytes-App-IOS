@@ -47,9 +47,11 @@ struct MainTabView: View {
             RestaurantsMapView(annotations: restViewModel.restaurants.map {
                             RestaurantAnnotation(title: $0.name, cuisine: $0.cuisine, phone: $0.phone, coordinate: CLLocationCoordinate2D(latitude: $0.latitude, longitude: $0.longitude))
                         })
+                        
                         .tabItem {
                             Image(systemName: "map")
                         }
+                        
                         .onAppear {
                             restViewModel.fetchRestaurants() // Fetch restaurants when this tab is selected
                         }

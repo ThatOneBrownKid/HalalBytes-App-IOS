@@ -29,6 +29,7 @@ struct RestListView: View {
                 }
             }
         }
+        .accessibilityIdentifier("RestListView")
     }
 }
 

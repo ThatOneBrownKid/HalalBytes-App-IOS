@@ -30,6 +30,7 @@ struct RestaurantsMapView: View {
             annotationItems: annotations) { annotation in
                 MapMarker(coordinate: annotation.coordinate, tint: .red)
             }
+        
             .onAppear {
                 if let currentLocation = locationManager.userLocation {
                     updateRegion(location: currentLocation)
@@ -38,6 +39,7 @@ struct RestaurantsMapView: View {
             .onChange(of: locationManager.userLocation) { newLocation in
                 newLocation.map(updateRegion)
             }
+            .accessibilityIdentifier("RestaurantsMapView")
     }
 
     private func updateRegion(location: CLLocation) {

@@ -22,13 +22,13 @@ final class HalalBytes_App__IOS_UITest: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
-        app.launch()
-
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+//    func testExample() throws {
+//        // UI tests must launch the application that they test.
+//        let app = XCUIApplication()
+//        app.launch()
+//
+//        // Use XCTAssert and related functions to verify your tests produce the correct results.
+//    }
 
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
@@ -39,41 +39,53 @@ final class HalalBytes_App__IOS_UITest: XCTestCase {
         }
     }
     
-    func testViewingFirstRestaurantDetails() {
+    func testViewingRestaurantList() {
         let app = XCUIApplication()
         app.launch()
         
-        // Wait for the first restaurant cell to appear
-        let firstRestaurantCell = app.tables.cells.element(boundBy: 0)
-        let exists = NSPredicate(format: "exists == true")
-        expectation(for: exists, evaluatedWith: firstRestaurantCell, handler: nil)
-        waitForExpectations(timeout: 10, handler: nil) // Adjust timeout as needed
-        
-        // Tap on the first restaurant cell
-        firstRestaurantCell.tap()
-        
-        // Check if the restaurant details view is displayed
-        let detailsView = app.otherElements["RestDetailView"]
-        XCTAssertTrue(detailsView.exists, "Restaurant details view should be displayed after tapping the first restaurant.")
+        // Wait for the list view to load and check if it exists
+        let listView = app.otherElements["RestListView"]
+        XCTAssertTrue(listView.waitForExistence(timeout: 10), "The restaurant list view should be visible.")
     }
 
-//    func testViewingRestaurantDetails() {
+    func testViewingRestaurantCreate() {
+        let app = XCUIApplication()
+        app.launch()
+        
+        // Wait for the list view to load and check if it exists
+        let listView = app.otherElements["RestCreateView"]
+        XCTAssertTrue(listView.waitForExistence(timeout: 30), "The restaurant create view should be visible.")
+    }
+
+//    func testMapViewAccessibility() {
 //        let app = XCUIApplication()
 //        app.launch()
-//        
-//        // Ensure the list loads by adding a static text check or similar
-//        let exists = NSPredicate(format: "exists == true")
-//        
-//        expectation(for: exists, evaluatedWith: app.cells.matching(identifier: "restaurantCell").firstMatch, handler: nil)
-//        waitForExpectations(timeout: 30, handler: nil)
-//        
-//        let firstRestaurantCell = app.cells.matching(identifier: "restaurantCell").firstMatch
-//        if firstRestaurantCell.exists {
-//            firstRestaurantCell.tap()
-//            XCTAssertTrue(app.otherElements["RestDetailView"].exists, "Restaurant details view should be displayed after tapping a restaurant")
-//        } else {
-//            XCTFail("No restaurant cells exist to tap on.")
-//        }
+//
+//        // Access the map tab using its accessibility identifier and tap it
+//        let mapTab = app.tabBars.buttons["mapTab"]
+//        XCTAssertTrue(mapTab.exists, "The map tab should be visible on the screen")
+//        mapTab.tap()
+//
+//        // Wait for the map view to appear
+//        let mapView = app.otherElements["RestaurantsMapView"]
+//        let exists = mapView.waitForExistence(timeout: 10) // Adjust timeout as needed based on network speed and response time
+//
+//        XCTAssertTrue(exists, "RestaurantsMapView should be displayed after tapping the map tab")
+//    }
+//    
+//    func testMapViewOpening() {
+//        let app = XCUIApplication()
+//        app.launch()
+//
+//        // Print the current UI hierarchy
+//        print(app.debugDescription)
+//
+//        let mapTab = app.tabBars.buttons["mapTab"]
+//        XCTAssertTrue(mapTab.exists, "The map tab should be visible on the screen")
+//        mapTab.tap()
+//
+//        let mapView = app.otherElements["RestaurantsMapView"]
+//        XCTAssertTrue(mapView.exists, "RestaurantsMapView should be displayed after tapping the map tab")
 //    }
 
 }

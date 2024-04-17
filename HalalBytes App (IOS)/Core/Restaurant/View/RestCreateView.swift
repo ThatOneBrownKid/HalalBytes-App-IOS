@@ -140,6 +140,7 @@ struct RestCreateView: View {
             .navigationTitle("Add New Restaurant")
             .navigationBarTitleDisplayMode(.inline)
         }
+        .accessibilityIdentifier("RestCreateView")
     }
 
     var formIsValid: Bool {

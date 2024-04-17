@@ -53,6 +53,7 @@ struct RestaurantsMapView: View {
             .sheet(item: $selectedRestaurant) { annotation in
                 RestDetailView(restaurant: convertAnnotationToRestaurant(annotation))
             }
+        
             .onAppear {
                 if let currentLocation = locationManager.userLocation {
                     updateRegion(location: currentLocation)
@@ -61,6 +62,7 @@ struct RestaurantsMapView: View {
             .onChange(of: locationManager.userLocation) { newLocation in
                 newLocation.map(updateRegion)
             }
+            .accessibilityIdentifier("RestaurantsMapView")
     }
 
     private func updateRegion(location: CLLocation) {

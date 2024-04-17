@@ -37,6 +37,7 @@ struct RestRowView: View {
             Spacer()
             // Optionally, add more details or an image here
         }
+        .accessibilityIdentifier("RestaurantCell_\(restaurant.id)")
         .padding()
     }
 }

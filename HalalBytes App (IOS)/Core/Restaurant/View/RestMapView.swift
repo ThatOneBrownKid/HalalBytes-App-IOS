@@ -8,9 +8,6 @@
 import SwiftUI
 import MapKit
 
-import SwiftUI
-import MapKit
-
 struct RestaurantsMapView: View {
     @StateObject private var locationManager = LocationManager()
     @State private var region: MKCoordinateRegion
@@ -58,9 +55,6 @@ struct RestaurantsMapView: View {
                 if let currentLocation = locationManager.userLocation {
                     updateRegion(location: currentLocation)
                 }
-            }
-            .onChange(of: locationManager.userLocation) { newLocation in
-                newLocation.map(updateRegion)
             }
             .accessibilityIdentifier("RestaurantsMapView")
     }

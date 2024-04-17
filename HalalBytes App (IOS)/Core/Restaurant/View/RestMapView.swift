@@ -31,7 +31,7 @@ struct RestaurantsMapView: View {
                 MapAnnotation(coordinate: annotation.coordinate) {
                     VStack {
                         Text(annotation.title ?? "Unknown")
-                            .foregroundColor(.black)
+                            .foregroundColor(.primary)
                             .font(.caption)
                             .fontWeight(.bold)
                             .frame(width: 80)

@@ -10,27 +10,43 @@ import MapKit
 
 struct RestaurantsMapView: View {
     @StateObject private var locationManager = LocationManager()
-    @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 0, longitude: 0), span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
-    var annotations: [RestaurantAnnotation] // Ensure this is your correct annotation type
+    @State private var region: MKCoordinateRegion
+
+    var annotations: [RestaurantAnnotation]
+
+    init(annotations: [RestaurantAnnotation]) {
+        self.annotations = annotations
+        _region = State(initialValue: MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 40.7128, longitude: -74.0060), span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)))
+
+        // Initialize locationManager to potentially update the region immediately
+        if locationManager.hasUserLocation(), let currentLocation = locationManager.userLocation {
+            _region = State(initialValue: MKCoordinateRegion(center: currentLocation.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)))
+        }
+    }
 
     var body: some View {
         Map(coordinateRegion: $region,
             showsUserLocation: true,
             annotationItems: annotations) { annotation in
-                // This assumes usage of MapMarker, but you should use the appropriate view or marker type
                 MapMarker(coordinate: annotation.coordinate, tint: .red)
             }
             .onAppear {
-                setInitialRegion()
+                if let currentLocation = locationManager.userLocation {
+                    updateRegion(location: currentLocation)
+                }
+            }
+            .onChange(of: locationManager.userLocation) { newLocation in
+                newLocation.map(updateRegion)
             }
     }
 
-    private func setInitialRegion() {
-        if let userLocation = locationManager.userLocation {
-            region = MKCoordinateRegion(center: userLocation.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
-        }
+    private func updateRegion(location: CLLocation) {
+        region = MKCoordinateRegion(center: location.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
     }
 }
+
+
+
 
 class RestaurantAnnotation: NSObject, Identifiable, MKAnnotation {
     let id = UUID()

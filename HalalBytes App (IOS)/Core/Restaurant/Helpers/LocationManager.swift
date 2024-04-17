@@ -17,18 +17,27 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
+        self.userLocation = locationManager.location
         locationManager.startUpdatingLocation()
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {
-            self.userLocation = location
+            DispatchQueue.main.async {
+                self.userLocation = location
+            }
         }
     }
 
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        if status == .denied {
+        if status == .authorizedWhenInUse || status == .authorizedAlways {
+            locationManager.startUpdatingLocation()
+        } else if status == .denied {
             print("Location permission denied.")
         }
+    }
+
+    func hasUserLocation() -> Bool {
+        return userLocation != nil
     }
 }
